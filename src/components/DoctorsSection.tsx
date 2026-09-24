@@ -9,7 +9,7 @@ interface DoctorsSectionProps {
 
 export const DoctorsSection: React.FC<DoctorsSectionProps> = ({ t, onDoctorClick }) => {
   return (
-    <section id="doctors" className="py-16 sm:py-24 bg-gradient-to-b from-[#FAF6FA] via-[#FFFFFF] to-[#FAF6FA] relative">
+    <section id="doctors" className="py-20 sm:py-28 bg-gradient-to-b from-[#FAF6FA] via-[#FFFFFF] to-[#FAF6FA] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Clock, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Clock, ExternalLink } from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface FooterProps {
@@ -17,14 +17,14 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           
           {/* Brand & About */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Clear Standalone Logo Card */}
-            <div className="bg-white/95 rounded-2xl px-4 py-2.5 inline-block shadow-xl border border-white/20">
+            {/* Brand Logo with white background */}
+            <a href="#" className="inline-block bg-white px-3.5 py-2 rounded-xl focus:outline-none hover:opacity-95 transition-opacity">
               <img 
                 src="/medcy-logo.png" 
                 alt="Medcy IVF Logo" 
-                className="h-12 sm:h-14 w-auto object-contain" 
+                className="h-10 sm:h-12 w-auto object-contain" 
               />
-            </div>
+            </a>
 
             <p className="text-xs sm:text-sm text-purple-200/80 font-medium leading-relaxed">
               {t.footer.aboutText}
@@ -65,19 +65,10 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
             </ul>
           </div>
 
-          {/* Interactive Vizag Health City Map (Clicking ANY side opens Google Maps Route Navigation) */}
+          {/* Interactive Vizag Health City Map (Clicking ANY side opens Google Maps) */}
           <div className="lg:col-span-4 space-y-3">
-            <h4 className="text-base font-extrabold text-white border-l-4 border-[#9A389F] pl-3 flex items-center justify-between">
-              <span>Location Map (Arilova Health City)</span>
-              <a 
-                href={mapDirectionsUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs text-yellow-300 hover:text-white font-bold inline-flex items-center gap-1 transition-colors"
-              >
-                <span>Route</span>
-                <Navigation className="w-3.5 h-3.5" />
-              </a>
+            <h4 className="text-base font-extrabold text-white border-l-4 border-[#9A389F] pl-3">
+              Location Map (Arilova Health City)
             </h4>
 
             <a
@@ -85,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="block relative w-full h-44 rounded-2xl overflow-hidden border-2 border-white/20 shadow-xl group cursor-pointer"
-              title="Click anywhere on map to open Google Maps navigation route to Medcy IVF"
+              title="Click anywhere on map to open Google Maps navigation to Medcy IVF"
             >
               {/* Map Iframe */}
               <iframe
@@ -100,10 +91,9 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
                 className="pointer-events-none group-hover:scale-105 transition-transform duration-300"
               />
 
-              {/* Quick Route Navigation Overlay Badge */}
-              <div className="absolute bottom-3 right-3 bg-[#652D6C] group-hover:bg-[#9A389F] text-white px-3.5 py-1.5 rounded-full text-xs font-black shadow-xl flex items-center gap-1.5 transition-all z-10 border border-yellow-300/40">
-                <Navigation className="w-3.5 h-3.5 text-yellow-300 animate-pulse" />
-                <span>Start Route Navigation</span>
+              {/* View on Google Maps Overlay Badge */}
+              <div className="absolute bottom-3 right-3 bg-[#652D6C] group-hover:bg-[#9A389F] text-white px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center gap-1.5 transition-all z-10 border border-white/20">
+                <span>Open in Google Maps</span>
                 <ExternalLink className="w-3 h-3 text-purple-200" />
               </div>
             </a>

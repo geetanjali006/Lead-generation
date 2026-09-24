@@ -17,6 +17,7 @@ export interface Translation {
     topBannerButton: string;
     campFormTitle: string;
     campFormSubtitle: string;
+    campLocation: string;
   };
   hero: {
     badge: string;
@@ -146,7 +147,8 @@ export const translations: Record<Language, Translation> = {
       topBannerSubtitle: "ఈ రోజే మీ ఉచిత స్లాట్‌ను బుక్ చేసుకోండి మరియు వైజాగ్ టాప్ ఫెర్టిలిటీ నిపుణులను సంప్రదించండి.",
       topBannerButton: "మీ ఉచిత స్లాట్‌ను బుక్ చేసుకోండి",
       campFormTitle: "ఉచిత మెడికల్ క్యాంప్ రిజిస్ట్రేషన్",
-      campFormSubtitle: "ఉచిత నిపుణుల సంప్రదింపుల కోసం మీ ఉచిత స్లాట్‌ను ఇప్పుడే బుక్ చేసుకోండి"
+      campFormSubtitle: "ఉచిత నిపుణుల సంప్రదింపుల కోసం మీ ఉచిత స్లాట్‌ను ఇప్పుడే బుక్ చేసుకోండి",
+      campLocation: "మెడ్సీ IVF, చిన్నగదిలి ప్లాట్ 9A, హెల్త్ సిటీ, విశాఖపట్నం, అడవివరం, ఆంధ్రప్రదేశ్ 530040"
     },
     hero: {
       badge: "",
@@ -156,16 +158,16 @@ export const translations: Record<Language, Translation> = {
       subtext: "సంతానం కోసం ఎదురుచూస్తున్న ప్రతి జంట కోసం ఉచిత వైద్య శిబిరం. ఈ ప్రయాణంలో మీరు ఒంటరిగా లేరు. మా కేంద్రాలలో 8000+ విజయవంతమైన IVF కేసులతో, ఆశ మీకు దగ్గరలోనే ఉంది.",
       locationBadge: "అరిలోవ హెల్త్ సిటీ, విశాఖపట్నం",
       offerBadge: "SPECIAL DISCOUNT PACKAGE OFFER",
-      offerText: "IVF ₹1.8 లక్షల నుండి ప్రారంభం",
+      offerText: "IVF చికిత్స కేవలం ₹1.8 లక్షలకే!",
       offerOriginalPrice: "సాధారణ మార్కెట్ ధర: ₹1.9 లక్షలు",
       offerSaveTag: "రూ. 10,000 వర్సెస్ ₹1.9L తక్షణ ఆదా!",
       offerNote: "గమనిక: బయట క్లినిక్‌లలో రూ. 1.9L ఉండే ప్యాకేజీని మెడ్సీ IVF ప్రత్యేక డిస్కౌంట్ ఆఫర్‌తో రూ. 1.8L కే అందిస్తోంది.",
-      srikakulamOffer: "శ్రీకాకుళం బ్రాంచ్‌లో IVF చికిత్సలు కేవలం ₹1.5 లక్షల నుండే ప్రారంభం!",
+      srikakulamOffer: "శ్రీకాకుళం బ్రాంచ్‌లో సంపూర్ణ IVF చికిత్స కేవలం ₹1.5 లక్షలకే!",
       keyPoints: [
         "8000+ విజయవంతమైన కేసులు",
-        "IVF ₹1.8 లక్షల నుండి ప్రారంభం",
+        "IVF చికిత్స కేవలం ₹1.8 లక్షలకే",
         "ఉచిత నిపుణుల సంప్రదింపులు & కౌన్సెలింగ్",
-        "శ్రీకాకుళం బ్రాంచ్‌లో IVF చికిత్సలు ₹1.5 లక్షల నుండి ప్రారంభం"
+        "శ్రీకాకుళం బ్రాంచ్‌లో సంపూర్ణ IVF చికిత్స కేవలం ₹1.5 లక్షలకే"
       ],
       formTitle: "కన్సల్టేషన్ రిజిస్ట్రేషన్",
       formSubtitle: "మీ కన్సల్టేషన్ స్లాట్‌ను ఇప్పుడే రిజర్వ్ చేసుకోండి",
@@ -339,7 +341,8 @@ export const translations: Record<Language, Translation> = {
       topBannerSubtitle: "Book Your Free Slot Today and consult with Vizag's top fertility specialists.",
       topBannerButton: "Book Your Free Slot Today",
       campFormTitle: "Free Medical Camp Registration",
-      campFormSubtitle: "Book your complimentary slot for a free expert fertility consultation"
+      campFormSubtitle: "Book your complimentary slot for a free expert fertility consultation",
+      campLocation: "Medcy IVF, Chinnagadili Plot 9A, Health City, Visakhapatnam, Adavivaram, Andhra Pradesh 530040"
     },
     hero: {
       badge: "",
@@ -349,16 +352,16 @@ export const translations: Record<Language, Translation> = {
       subtext: "A Free Medical Camp for Every Couple Hoping to Become Parents. You're not alone in this journey. With 8000+ successful IVF cases across our centres, hope is closer than you think.",
       locationBadge: "Arilova Health City, Visakhapatnam",
       offerBadge: "SPECIAL DISCOUNT PACKAGE OFFER",
-      offerText: "IVF FROM ₹1.8 LAKHS ONWARDS",
+      offerText: "IVF TREATMENT AT ₹1.8 LAKHS ONLY",
       offerOriginalPrice: "Standard Market Price: ₹1.9 Lakhs",
       offerSaveTag: "SAVE ₹10,000 VS REGULAR ₹1.9L!",
       offerNote: "Note: Standard market clinics charge ₹1.9 Lakhs — Medcy IVF provides complete treatment package at ₹1.8 Lakhs.",
-      srikakulamOffer: "In Srikakulam Branch, Complete IVF Treatments Start from ₹1.5 Lakhs Onwards!",
+      srikakulamOffer: "In Srikakulam Branch, Complete IVF Treatment at ₹1.5 Lakhs Only",
       keyPoints: [
         "8000+ Successful IVF Cases",
-        "IVF from ₹1.8 Lakhs Onwards",
+        "IVF Treatment at ₹1.8 Lakhs Only",
         "Free Expert Consultation & Counselling",
-        "In Srikakulam Branch IVF Treatments Start from ₹1.5 Lakhs"
+        "In Srikakulam Branch, Complete IVF Treatment at ₹1.5 Lakhs Only"
       ],
       formTitle: "Consultation Registration",
       formSubtitle: "Reserve your consultation spot today",

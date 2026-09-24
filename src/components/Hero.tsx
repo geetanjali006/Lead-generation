@@ -33,16 +33,16 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#FAF6FA] min-h-[calc(100vh-5rem)] flex items-start justify-center pt-16 sm:pt-24 lg:pt-32 pb-8 sm:pb-12 px-4 sm:px-8 lg:px-12">
+    <section className="relative overflow-hidden bg-[#FAF6FA] min-h-[calc(100vh-8.5rem)] flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-4 sm:px-8 lg:px-12">
       {/* Background Glows */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-[#9A389F]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#652D6C]/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-start gap-10 sm:gap-12 lg:gap-14 xl:gap-20">
+      <div className="w-full max-w-7xl mx-auto relative z-10 my-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-10 sm:gap-12 lg:gap-14 xl:gap-20">
           
           {/* Left Column: Headlines & Discount Offer */}
-          <div className="space-y-5 sm:space-y-6 lg:col-span-7">
+          <div className="space-y-5 sm:space-y-6 lg:col-span-7 order-2 lg:order-1">
             
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-extrabold tracking-tight text-[#2A102D] leading-[1.12]">
@@ -57,22 +57,23 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
               {t.hero.subtext}
             </p>
 
-            {/* Rephrased Srikakulam Branch IVF Starting Price Callout Banner */}
-            <div className="w-full bg-gradient-to-r from-[#FDE8E8] via-[#FFF3D6] to-[#FDE8E8] border border-amber-400/60 text-[#45144A] px-4 py-2.5 rounded-xl shadow-sm flex items-center">
-              <p className="text-xs sm:text-sm font-bold text-[#3D1443] leading-snug">
+            {/* Srikakulam Branch Complete IVF at ₹1.5 Lakhs Only Callout Banner */}
+            <div className="w-full bg-gradient-to-r from-[#FDE8E8] via-[#FFF3D6] to-[#FDE8E8] border border-amber-400/80 text-[#45144A] px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl shadow-sm flex items-center gap-2 overflow-hidden">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#652D6C] shrink-0" />
+              <p className="text-xs min-[420px]:text-sm sm:text-base lg:text-lg font-extrabold text-[#3D1443] tracking-tight whitespace-nowrap">
                 {t.hero.srikakulamOffer}
               </p>
             </div>
 
             {/* Special Discount Offer Card comparing 1.9L vs 1.8L */}
-            <div className="text-white shadow-xl relative overflow-hidden border border-yellow-300/40 bg-gradient-to-r from-[#4A164E] via-[#652D6C] to-[#8F2D95] p-4 sm:p-5 rounded-2xl">
+            <div className="text-white shadow-xl relative overflow-hidden border border-yellow-300/40 bg-gradient-to-r from-[#4A164E] via-[#652D6C] to-[#8F2D95] p-5 sm:p-6 pb-8 sm:pb-10 lg:pb-12 rounded-2xl">
               {/* Decorative Background Glow */}
               <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-yellow-300/15 rounded-full blur-2xl pointer-events-none" />
               <div className="absolute top-2 right-4 opacity-20 pointer-events-none">
                 <Sparkles className="w-16 h-16 text-yellow-300" />
               </div>
 
-              <div className="relative z-10 space-y-2">
+              <div className="relative z-10 space-y-2.5">
                 {/* Badges Bar */}
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-[11px] font-extrabold uppercase tracking-wider bg-yellow-400 text-[#4D1F53] px-3 py-0.5 rounded-full shadow-sm flex items-center gap-1">
@@ -97,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
                     </h3>
                   </div>
 
-                  <p className="text-xs text-purple-100 font-medium mt-0.5">
+                  <p className="text-xs sm:text-sm text-purple-100 font-medium mt-1">
                     {t.hero.offerNote}
                   </p>
                 </div>
@@ -106,9 +107,9 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
 
           </div>
 
-          {/* Right Column: Normal Sized Registration Form */}
-          <div className="lg:col-span-5">
-            <div className="bg-white relative shadow-xl border border-[#652D6C]/20 pt-4 pb-5 px-5 sm:pt-5 sm:pb-6 sm:px-6 lg:pt-5 lg:pb-7 lg:px-7 rounded-2xl">
+          {/* Right Column: Registration Form */}
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <div className="bg-white relative shadow-xl border border-[#652D6C]/20 pt-5 px-5 sm:pt-6 sm:px-6 lg:pt-6 lg:px-7 pb-8 sm:pb-10 lg:pb-12 rounded-2xl">
               
               {/* Form Header */}
               <div className="text-center mb-4 sm:mb-5">
@@ -216,13 +217,13 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn-accent rounded-xl font-extrabold text-base sm:text-lg py-3 sm:py-3.5 px-5 flex items-center justify-center gap-2 shadow-lg mt-2 group hover:scale-[1.01] active:scale-95 transition-all cursor-pointer"
+                  className="w-full btn-accent rounded-xl font-extrabold text-base sm:text-lg py-3.5 sm:py-4 px-5 flex items-center justify-center gap-2 shadow-lg mt-3 group hover:scale-[1.01] active:scale-95 transition-all cursor-pointer"
                 >
                   <span>{isSubmitting ? t.hero.submitting : t.hero.submitButton}</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
 
-                <p className="text-xs sm:text-sm text-center text-[#56335B] font-medium pt-1 flex items-center justify-center gap-1">
+                <p className="text-xs sm:text-sm text-center text-[#56335B] font-medium pt-2 sm:pt-3 flex items-center justify-center gap-1.5">
                   <span>🔒</span>
                   <span>{t.hero.privacyNote}</span>
                 </p>

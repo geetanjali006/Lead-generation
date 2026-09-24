@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Calendar, Globe, Sparkles, ChevronRight } from 'lucide-react';
+import { Phone, Calendar, Globe, Sparkles, ChevronRight, MapPin } from 'lucide-react';
 import { Language, Translation } from '../data/translations';
 
 interface NavbarProps {
@@ -16,14 +16,12 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group focus:outline-none">
-          <div className="relative flex items-center">
-            <img 
-              src="/medcy-logo.png" 
-              alt="Medcy IVF Logo" 
-              className="h-12 sm:h-14 object-contain transition-transform group-hover:scale-105"
-            />
-          </div>
+        <a href="#" className="flex items-center group focus:outline-none">
+          <img 
+            src="/medcy-logo.png" 
+            alt="Medcy IVF Logo" 
+            className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+          />
         </a>
 
         {/* Action Controls */}
@@ -86,6 +84,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
                 <span className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#FFCC00] tracking-tight">{t.nav.freeCampBadge}</span>
                 <span className="text-xs sm:text-sm lg:text-base font-semibold text-purple-100">{t.nav.topBannerTitle}</span>
                 <span className="text-yellow-300 font-extrabold text-xs sm:text-sm lg:text-base inline-flex items-center gap-1">⚡ {t.nav.limitedSlots}</span>
+                <span className="text-purple-100 font-medium text-xs sm:text-sm lg:text-base inline-flex items-center gap-1.5 bg-white/10 px-3 py-0.5 rounded-full border border-white/15">
+                  <MapPin className="w-3.5 h-3.5 text-pink-300 shrink-0" />
+                  <span>{t.nav.campLocation}</span>
+                </span>
               </div>
               <span className="text-yellow-400/60 font-bold text-lg">•</span>
 
@@ -93,6 +95,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
                 <span className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#FFCC00] tracking-tight">{t.nav.freeCampBadge}</span>
                 <span className="text-xs sm:text-sm lg:text-base font-semibold text-purple-100">{t.nav.topBannerTitle}</span>
                 <span className="text-yellow-300 font-extrabold text-xs sm:text-sm lg:text-base inline-flex items-center gap-1">⚡ {t.nav.limitedSlots}</span>
+                <span className="text-purple-100 font-medium text-xs sm:text-sm lg:text-base inline-flex items-center gap-1.5 bg-white/10 px-3 py-0.5 rounded-full border border-white/15">
+                  <MapPin className="w-3.5 h-3.5 text-pink-300 shrink-0" />
+                  <span>{t.nav.campLocation}</span>
+                </span>
               </div>
               <span className="text-yellow-400/60 font-bold text-lg">•</span>
 
@@ -101,6 +107,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
                 <span className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#FFCC00] tracking-tight">{t.nav.freeCampBadge}</span>
                 <span className="text-xs sm:text-sm lg:text-base font-semibold text-purple-100">{t.nav.topBannerTitle}</span>
                 <span className="text-yellow-300 font-extrabold text-xs sm:text-sm lg:text-base inline-flex items-center gap-1">⚡ {t.nav.limitedSlots}</span>
+                <span className="text-purple-100 font-medium text-xs sm:text-sm lg:text-base inline-flex items-center gap-1.5 bg-white/10 px-3 py-0.5 rounded-full border border-white/15">
+                  <MapPin className="w-3.5 h-3.5 text-pink-300 shrink-0" />
+                  <span>{t.nav.campLocation}</span>
+                </span>
               </div>
               <span className="text-yellow-400/60 font-bold text-lg">•</span>
 
@@ -108,6 +118,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
                 <span className="text-lg sm:text-xl lg:text-2xl font-extrabold text-[#FFCC00] tracking-tight">{t.nav.freeCampBadge}</span>
                 <span className="text-xs sm:text-sm lg:text-base font-semibold text-purple-100">{t.nav.topBannerTitle}</span>
                 <span className="text-yellow-300 font-extrabold text-xs sm:text-sm lg:text-base inline-flex items-center gap-1">⚡ {t.nav.limitedSlots}</span>
+                <span className="text-purple-100 font-medium text-xs sm:text-sm lg:text-base inline-flex items-center gap-1.5 bg-white/10 px-3 py-0.5 rounded-full border border-white/15">
+                  <MapPin className="w-3.5 h-3.5 text-pink-300 shrink-0" />
+                  <span>{t.nav.campLocation}</span>
+                </span>
               </div>
               <span className="text-yellow-400/60 font-bold text-lg">•</span>
             </div>

@@ -45,8 +45,13 @@
 }
 
 @keyframes starburst-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Glowing outline button */
@@ -101,8 +106,13 @@ html {
 
 /* Infinite Marquee Ticker for Top Banner */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -114,4 +124,3 @@ html {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-

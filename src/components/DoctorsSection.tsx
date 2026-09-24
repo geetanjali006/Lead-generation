@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserCheck, GraduationCap, Ribbon, Award, Sparkles } from 'lucide-react';
+import { GraduationCap, Ribbon, Award, Sparkles } from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface DoctorsSectionProps {
@@ -14,11 +14,6 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({ t, onDoctorClick
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#652D6C]/10 border border-[#652D6C]/20 text-[#652D6C] text-xs font-extrabold tracking-wider uppercase">
-            <UserCheck className="w-4 h-4 text-[#9A389F]" />
-            <span>{t.doctors.badge}</span>
-          </div>
-
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2A102D] tracking-tight">
             {t.doctors.title}
           </h2>

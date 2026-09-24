@@ -28,8 +28,19 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-4">
-          {/* Language Toggle Button (TE 1st default, EN option) */}
+          {/* Language Toggle Button (EN 1st default, TE option) */}
           <div className="flex items-center bg-[#FAF6FA] border border-[#652D6C]/25 rounded-full p-1 shadow-inner">
+            <button
+              onClick={() => setLang('en')}
+              className={`px-3 py-1 text-xs sm:text-sm font-bold rounded-full transition-all flex items-center gap-1 ${
+                lang === 'en'
+                  ? 'bg-[#652D6C] text-white shadow-md'
+                  : 'text-[#56335B] hover:text-[#652D6C]'
+              }`}
+              title="Switch to English"
+            >
+              English
+            </button>
             <button
               onClick={() => setLang('te')}
               className={`px-3 py-1 text-xs sm:text-sm font-bold rounded-full transition-all flex items-center gap-1 ${
@@ -40,17 +51,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
               title="తెలుగు మార్చండి"
             >
               తెలుగు
-            </button>
-            <button
-              onClick={() => setLang('en')}
-              className={`px-3 py-1 text-xs sm:text-sm font-bold rounded-full transition-all flex items-center gap-1 ${
-                lang === 'en'
-                  ? 'bg-[#652D6C] text-white shadow-md'
-                  : 'text-[#56335B] hover:text-[#652D6C]'
-              }`}
-              title="Switch to English"
-            >
-              EN
             </button>
           </div>
 

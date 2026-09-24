@@ -11,8 +11,8 @@ import { MobileBottomBar } from './components/MobileBottomBar';
 import { sendToGoogleSheet, FormSubmissionData } from './utils/googleSheets';
 
 export function App() {
-  // Default language is set to Telugu ('te')
-  const [lang, setLang] = useState<Language>('te');
+  // Default language is set to English ('en')
+  const [lang, setLang] = useState<Language>('en');
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bookingData, setBookingData] = useState<FormSubmissionData | null>(null);

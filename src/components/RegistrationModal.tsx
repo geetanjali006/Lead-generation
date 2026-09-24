@@ -6,7 +6,7 @@ import { getUpcomingSaturdays } from '../utils/saturdays';
 interface RegistrationModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onFormSubmit: (data: { name: string; phone: string; slot: string; date: string; age?: string }) => void;
+  onFormSubmit: (data: { name: string; phone: string; slot: string; date: string; age?: string; formSource?: string }) => void;
   t: Translation;
 }
 
@@ -31,7 +31,10 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      onFormSubmit(formData);
+      onFormSubmit({
+        ...formData,
+        formSource: 'FREE MEDICAL CAMP Consultation Registration'
+      });
       onClose();
     }, 600);
   };

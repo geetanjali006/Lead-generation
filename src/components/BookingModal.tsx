@@ -2,16 +2,12 @@ import React from 'react';
 import { X, CheckCircle, MessageSquare, Calendar, Clock, User, Phone, Sparkles } from 'lucide-react';
 import { Translation } from '../data/translations';
 
+import { FormSubmissionData } from '../utils/googleSheets';
+
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  bookingData: {
-    name: string;
-    phone: string;
-    slot: string;
-    date: string;
-    age?: string;
-  } | null;
+  bookingData: FormSubmissionData | null;
   t: Translation;
 }
 

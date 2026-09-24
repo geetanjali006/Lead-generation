@@ -1,13 +1,12 @@
 import React from 'react';
-import { MapPin, Phone, Clock, Mail, Heart, Sparkles, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, ExternalLink } from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface FooterProps {
   t: Translation;
-  onBookClick: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ t, onBookClick }) => {
+export const Footer: React.FC<FooterProps> = ({ t }) => {
   const mapDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=Medcy+IVF+Plot+9A+Health+City+Arilova+Visakhapatnam+530040&dir_action=navigate";
 
   return (
@@ -30,16 +29,6 @@ export const Footer: React.FC<FooterProps> = ({ t, onBookClick }) => {
             <p className="text-xs sm:text-sm text-purple-200/80 font-medium leading-relaxed">
               {t.footer.aboutText}
             </p>
-
-            <div className="pt-2">
-              <button
-                onClick={onBookClick}
-                className="btn-accent px-5 py-2.5 rounded-full text-xs font-bold shadow-lg inline-flex items-center gap-2 cursor-pointer"
-              >
-                <Sparkles className="w-4 h-4 text-yellow-300" />
-                <span>{t.nav.bookAppointment}</span>
-              </button>
-            </div>
           </div>
 
           {/* Location & Contact Info */}

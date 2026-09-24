@@ -8,18 +8,14 @@ import { BookingModal } from './components/BookingModal';
 import { RegistrationModal } from './components/RegistrationModal';
 import { MobileBottomBar } from './components/MobileBottomBar';
 
+import { sendToGoogleSheet, FormSubmissionData } from './utils/googleSheets';
+
 export function App() {
   // Default language is set to Telugu ('te')
   const [lang, setLang] = useState<Language>('te');
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [bookingData, setBookingData] = useState<{
-    name: string;
-    phone: string;
-    slot: string;
-    date: string;
-    age?: string;
-  } | null>(null);
+  const [bookingData, setBookingData] = useState<FormSubmissionData | null>(null);
 
   const t = translations[lang];
 
@@ -31,9 +27,10 @@ export function App() {
     setIsRegistrationModalOpen(true);
   };
 
-  const handleFormSubmit = (data: { name: string; phone: string; slot: string; date: string; age?: string }) => {
+  const handleFormSubmit = (data: FormSubmissionData) => {
     setBookingData(data);
     setIsModalOpen(true);
+    sendToGoogleSheet(data);
   };
 
   return (
@@ -65,7 +62,6 @@ export function App() {
       {/* Footer with Map & Contact */}
       <Footer 
         t={t} 
-        onBookClick={handleBookClick} 
       />
 
       {/* Registration Popup Modal */}

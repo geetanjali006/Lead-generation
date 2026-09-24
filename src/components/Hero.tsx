@@ -4,7 +4,7 @@ import { Translation } from '../data/translations';
 
 interface HeroProps {
   t: Translation;
-  onFormSubmit: (data: { name: string; phone: string; slot: string; date: string; age?: string }) => void;
+  onFormSubmit: (data: { name: string; phone: string; slot: string; date: string; age?: string; formSource?: string }) => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
@@ -25,7 +25,10 @@ export const Hero: React.FC<HeroProps> = ({ t, onFormSubmit }) => {
     setIsSubmitting(true);
     setTimeout(() => {
       setIsSubmitting(false);
-      onFormSubmit(formData);
+      onFormSubmit({
+        ...formData,
+        formSource: 'Consultation Registration (Hero Form)'
+      });
     }, 600);
   };
 

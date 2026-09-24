@@ -1,7 +1,9 @@
 // Google Sheets Integration Utility
 // Enter your published Google Apps Script Web App URL below or set VITE_GOOGLE_SCRIPT_URL in .env file
 
-export const GOOGLE_SCRIPT_URL = (import.meta as any).env?.VITE_GOOGLE_SCRIPT_URL || '';
+export const GOOGLE_SCRIPT_URL = 
+  (import.meta as any).env?.VITE_GOOGLE_SCRIPT_URL || 
+  'https://script.google.com/macros/s/AKfycbwBHVBula5IBsiHBPcwuU6BfSqcsgAVcWfPV5PnRyQ9ioXbEOn_xSXsTWL_y8RnLUxNmA/exec';
 
 export interface FormSubmissionData {
   name: string;

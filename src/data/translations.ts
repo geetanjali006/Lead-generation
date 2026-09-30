@@ -152,8 +152,8 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       badge: "",
-      headlinePart1: "తల్లిదండ్రులు కావాలనే మీ ప్రయాణం ",
-      headlineHighlight: "ఇక్కడ మొదలవుతుంది",
+      headlinePart1: "సంతాన సాఫల్య ప్రయాణంలో ",
+      headlineHighlight: "మీ నమ్మకమైన భాగస్వామి",
       headlinePart2: "",
       subtext: "సంతానం కోసం ఎదురుచూస్తున్న ప్రతి జంట కోసం ఉచిత వైద్య శిబిరం. ఈ ప్రయాణంలో మీరు ఒంటరిగా లేరు. మా కేంద్రాలలో 8000+ విజయవంతమైన IVF కేసులతో, ఆశ మీకు దగ్గరలోనే ఉంది.",
       locationBadge: "అరిలోవ హెల్త్ సిటీ, విశాఖపట్నం",
@@ -346,8 +346,8 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       badge: "",
-      headlinePart1: "Your Journey to Parenthood ",
-      headlineHighlight: "Starts Here",
+      headlinePart1: "Your Trusted Partner in ",
+      headlineHighlight: "Parenthood",
       headlinePart2: "",
       subtext: "A Free Medical Camp for Every Couple Hoping to Become Parents. You're not alone in this journey. With 8000+ successful IVF cases across our centres, hope is closer than you think.",
       locationBadge: "Arilova Health City, Visakhapatnam",

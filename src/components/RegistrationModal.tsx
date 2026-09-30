@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, User, Phone, ChevronRight, Sparkles, Clock, ShieldCheck } from 'lucide-react';
+import { X, Calendar, User, Phone, ChevronRight, Clock, ShieldCheck } from 'lucide-react';
 import { Translation } from '../data/translations';
 import { getUpcomingSaturdays } from '../utils/saturdays';
 
@@ -56,7 +56,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({ isOpen, on
         {/* Modal Header */}
         <div className="text-center space-y-2 mb-6">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#652D6C]/10 text-[#652D6C] text-xs font-extrabold rounded-full uppercase tracking-wider mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-[#9A389F]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-[#9A389F]" />
             <span>{t.nav.freeCampBadge}</span>
           </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Sparkles, ChevronRight } from 'lucide-react';
+import { Calendar, Award, ChevronRight } from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface CtaBannerProps {
@@ -13,7 +13,7 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ t, onBookClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         <div className="space-y-2 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-yellow-300 text-xs font-black uppercase tracking-wider">
-            <Sparkles className="w-4 h-4" />
+            <Award className="w-4 h-4" />
             <span>Free Consultation</span>
           </div>
 

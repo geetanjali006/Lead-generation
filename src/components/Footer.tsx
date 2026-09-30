@@ -17,14 +17,24 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           
           {/* Brand & About */}
           <div className="lg:col-span-4 space-y-4">
-            {/* Brand Logo with white background */}
-            <a href="#" className="inline-block bg-white px-3.5 py-2 rounded-xl focus:outline-none hover:opacity-95 transition-opacity">
-              <img 
-                src="/medcy-logo.png" 
-                alt="Medcy IVF Logo" 
-                className="h-10 sm:h-12 w-auto object-contain" 
-              />
-            </a>
+            {/* Brand Logos with white background */}
+            <div className="inline-flex items-center gap-3 bg-white px-3.5 py-2 rounded-xl">
+              <a href="#" className="focus:outline-none hover:opacity-95 transition-opacity">
+                <img 
+                  src="/medcy-logo.png" 
+                  alt="Medcy IVF Logo" 
+                  className="h-8 sm:h-10 w-auto object-contain" 
+                />
+              </a>
+              <span className="h-6 w-px bg-gray-300" aria-hidden="true"></span>
+              <a href="#" className="focus:outline-none hover:opacity-95 transition-opacity">
+                <img 
+                  src="/vizag-ivf-logo.png" 
+                  alt="Vizag IVF Centre Gajuwaka Logo" 
+                  className="h-8 sm:h-10 w-auto object-contain" 
+                />
+              </a>
+            </div>
 
             <p className="text-xs sm:text-sm text-purple-200/80 font-medium leading-relaxed">
               {t.footer.aboutText}

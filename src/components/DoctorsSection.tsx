@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Ribbon, Award, Sparkles } from 'lucide-react';
+import { GraduationCap, Ribbon, Award, Calendar } from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface DoctorsSectionProps {
@@ -89,12 +89,22 @@ export const DoctorsSection: React.FC<DoctorsSectionProps> = ({ t, onDoctorClick
 
               </div>
 
-              {/* Bottom Achievement Ribbon Badge */}
-              <div className="mt-6 pt-4 border-t border-[#652D6C]/10 flex items-center justify-between">
+              {/* Bottom Achievement Ribbon Badge & Action Button */}
+              <div className="mt-6 pt-4 border-t border-[#652D6C]/10 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2 text-xs sm:text-sm font-extrabold text-[#652D6C]">
                   <Award className="w-4 h-4 text-[#9A389F]" />
                   <span>{doctor.achievementBadge}</span>
                 </div>
+
+                {onDoctorClick && (
+                  <button
+                    onClick={() => onDoctorClick(doctor.name)}
+                    className="btn-accent px-4 py-2 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-sm hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                  >
+                    <span>{t.nav.bookAppointment}</span>
+                    <Calendar className="w-3.5 h-3.5 text-[#3D1443]" />
+                  </button>
+                )}
               </div>
 
             </div>

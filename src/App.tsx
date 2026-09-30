@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Language, translations } from './data/translations';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { PackageInclusions } from './components/PackageInclusions';
 import { DoctorsSection } from './components/DoctorsSection';
 import { Footer } from './components/Footer';
 import { BookingModal } from './components/BookingModal';
@@ -46,13 +47,19 @@ export function App() {
 
       {/* Main Content */}
       <main>
-        {/* Hero Section */}
+        {/* 1. Hero Section */}
         <Hero 
           t={t} 
           onFormSubmit={handleFormSubmit} 
         />
 
-        {/* Doctors Section ("Meet the experts / మా స్పెషలిస్ట్ డాక్టర్స్") */}
+        {/* 2. Inclusions Section (8 Key Inclusions) */}
+        <PackageInclusions 
+          t={t} 
+          onBookClick={handleBookClick} 
+        />
+
+        {/* 3. Meet the Experts Section (Dr. Sireesha Rani & Dr. Sudheshna Devi) */}
         <DoctorsSection 
           t={t} 
           onDoctorClick={handleBookClick} 

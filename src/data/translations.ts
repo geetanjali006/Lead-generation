@@ -21,9 +21,11 @@ export interface Translation {
   };
   hero: {
     badge: string;
+    brandTag?: string;
     headlinePart1: string;
     headlineHighlight: string;
     headlinePart2: string;
+    tagline?: string;
     subtext: string;
     locationBadge: string;
     offerBadge: string;
@@ -91,6 +93,15 @@ export interface Translation {
       achievementBadge: string;
     }[];
   };
+  whyChoose: {
+    title: string;
+    items: {
+      number: string;
+      title: string;
+      desc: string;
+      icon: string;
+    }[];
+  };
   ctaBanner: {
     title: string;
     subtitle: string;
@@ -152,10 +163,12 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       badge: "",
-      headlinePart1: "సంతాన సాఫల్య ప్రయాణంలో ",
-      headlineHighlight: "మీ నమ్మకమైన భాగస్వామి",
+      brandTag: "MEDCY IVF",
+      headlinePart1: "8,000+ కుటుంబాలు మాతో ఎదిగాయి.",
+      headlineHighlight: "మీ కుటుంబం కూడా!",
       headlinePart2: "",
-      subtext: "సంతానం కోసం ఎదురుచూస్తున్న ప్రతి జంట కోసం ఉచిత వైద్య శిబిరం. ఈ ప్రయాణంలో మీరు ఒంటరిగా లేరు. మా కేంద్రాలలో 8000+ విజయవంతమైన IVF కేసులతో, ఆశ మీకు దగ్గరలోనే ఉంది.",
+      tagline: "అత్యుత్తమ ఫెర్టిలిటీ సంరక్షణ. తల్లిదండ్రులు కావాలనే మీ ప్రయాణం ఇక్కడే మొదలవుతుంది.",
+      subtext: "రుజువైన విజయవంతమైన రేట్లు, అగ్రశ్రేణి సంతానలేమి నిపుణులు మరియు అందుబాటు ధరల సంపూర్ణ చికిత్సా ప్రణాళికల కోసం మెడ్సీని ఎంచుకోండి. ఎటువంటి దాగి ఉన్న రుసుములు లేదా రిజిస్ట్రేషన్ ఛార్జీలు లేవు — మీరు తల్లిదండ్రులు కావడానికి తోడ్పడే నిజమైన నిపుణుల సంరక్షణ మాత్రమే.",
       locationBadge: "అరిలోవ హెల్త్ సిటీ, విశాఖపట్నం",
       offerBadge: "SPECIAL DISCOUNT PACKAGE OFFER",
       offerText: "IVF చికిత్స కేవలం ₹1.8 లక్షలకే!",
@@ -164,10 +177,9 @@ export const translations: Record<Language, Translation> = {
       offerNote: "గమనిక: బయట క్లినిక్‌లలో రూ. 1.9L ఉండే ప్యాకేజీని మెడ్సీ IVF ప్రత్యేక డిస్కౌంట్ ఆఫర్‌తో రూ. 1.8L కే అందిస్తోంది.",
       srikakulamOffer: "శ్రీకాకుళం బ్రాంచ్‌లో సంపూర్ణ IVF చికిత్స కేవలం ₹1.5 లక్షలకే!",
       keyPoints: [
-        "8000+ విజయవంతమైన కేసులు",
-        "IVF చికిత్స కేవలం ₹1.8 లక్షలకే",
-        "ఉచిత నిపుణుల సంప్రదింపులు & కౌన్సెలింగ్",
-        "శ్రీకాకుళం బ్రాంచ్‌లో సంపూర్ణ IVF చికిత్స కేవలం ₹1.5 లక్షలకే"
+        "ఉచిత నిపుణుల సంప్రదింపులు",
+        "ఉచిత కౌన్సెలింగ్",
+        "ఎటువంటి రిజిస్ట్రేషన్ ఫీజు లేదు"
       ],
       formTitle: "కన్సల్టేషన్ రిజిస్ట్రేషన్",
       formSubtitle: "మీ కన్సల్టేషన్ స్లాట్‌ను ఇప్పుడే రిజర్వ్ చేసుకోండి",
@@ -193,34 +205,49 @@ export const translations: Record<Language, Translation> = {
       successRateLabel: "సంప్రదింపులు & కౌన్సెలింగ్"
     },
     inclusions: {
-      badge: "ప్యాకేజ్ ప్రత్యేకతలు",
-      title: "IVF ప్యాకేజ్‌లో చేర్చబడిన ప్రముఖ అంశాలు",
-      subtitle: "పారదర్శకమైన వైద్య సేవలు — ఎటువంటి దాగి ఉన్న ఛార్జీలు లేకుండా సంపూర్ణ సంరక్షణ.",
+      badge: "INCLUSIONS",
+      title: "1.8 Lakh Package Inclusions",
+      subtitle: "",
       items: [
         {
-          title: "IVF ప్రొఫైలింగ్ & స్కాన్లు",
-          desc: "సంపూర్ణ ఫెర్టిలిటీ బ్లడ్ ప్రొఫైలింగ్ పరీక్షలు మరియు అధునాతన అల్ట్రాసౌండ్ స్కానింగ్లు.",
+          title: "IVF profiling tests & Scans",
+          desc: "",
           icon: "Activity"
         },
         {
-          title: "స్టిమ్యులేషన్ ఇంజెక్షన్లు & ట్రిగ్గర్",
-          desc: "అత్యుత్తమ నాణ్యత కలిగిన అండాశయ ప్రేరణ ఇంజెక్షన్లు మరియు సరైన సమయానికి ట్రిగ్గర్ షాట్.",
+          title: "Semen Backup",
+          desc: "",
+          icon: "Database"
+        },
+        {
+          title: "Stimulation Injections",
+          desc: "",
           icon: "Syringe"
         },
         {
-          title: "IVF / ICSI ప్రక్రియ & OT",
-          desc: "ప్రపంచ స్థాయి కీల్ జర్మనీ ప్రామాణిక ఎంబ్రియోలాజీ లాబ్ మరియు ఆపరేషన్ థియేటర్ ఛార్జీలు.",
+          title: "IVF/ICSI Procedure charges",
+          desc: "",
           icon: "ShieldCheck"
         },
         {
-          title: "Embryo ట్రాన్స్‌ఫర్ & 6 నెలల ఫ్రీజింగ్",
-          desc: "సురక్షితమైన ఎంబ్రియో బదిలీ మరియు 6 నెలల పాటు ఉచిత క్య్రియో ఫ్రీజింగ్ సదుపాయం.",
-          icon: "Snowflake"
+          title: "Trigger Shot",
+          desc: "",
+          icon: "Target"
         },
         {
-          title: "Semen Backup సదుపాయం",
-          desc: "చికిత్స ప్రక్రియకు అవసరమైన పురుష కణాల భద్రత మరియు శాస్త్రీయ నిల్వ సదుపాయం.",
-          icon: "Database"
+          title: "OT charges",
+          desc: "",
+          icon: "Building2"
+        },
+        {
+          title: "Embryo Transfer",
+          desc: "",
+          icon: "HeartHandshake"
+        },
+        {
+          title: "Embryo Freezing (6 months)",
+          desc: "",
+          icon: "Snowflake"
         }
       ],
       pricingTitle: "సులభమైన చికిత్స ప్యాకేజీల వివరాలు",
@@ -274,6 +301,41 @@ export const translations: Record<Language, Translation> = {
           photo: "/dr-sudeshna-devi.png",
           bio: "లాపరోస్కోపిక్ సర్జరీ, హిస్టెరోస్కోపీ, రిప్రొడక్టివ్ మెడిసిన్ మరియు వ్యక్తిగతీకరించిన అండాశయ ప్రేరణ విధానాలలో ప్రముఖ వైద్య నిపుణులు.",
           achievementBadge: "Laparoscopic Specialist"
+        }
+      ]
+    },
+    whyChoose: {
+      title: "మా ప్రత్యేకతలు",
+      items: [
+        {
+          number: "1",
+          title: "8,000+ విజయవంతమైన కేసులు",
+          desc: "విశాఖపట్నం మరియు పరిసర ప్రాంతాలలో అత్యధిక సంతానలేమి విజయాలు.",
+          icon: "Trophy"
+        },
+        {
+          number: "2",
+          title: "జర్మన్ కీల్ ప్రొటోకాల్స్",
+          desc: "ప్రపంచ ప్రఖ్యాతి గాంచిన అంతర్జాతీయ ఎంబ్రియోలాజీ ల్యాబ్ ప్రమాణాలు.",
+          icon: "Gem"
+        },
+        {
+          number: "3",
+          title: "అనుభవజ్ఞులైన నిపుణులు",
+          desc: "20+ సంవత్సరాల అనుభవం కలిగిన సీనియర్ వైద్యుల సంరక్షణ.",
+          icon: "Stethoscope"
+        },
+        {
+          number: "4",
+          title: "వ్యక్తిగతీకరించిన సంరక్షణ",
+          desc: "ప్రతి జంటకు అనుకూలమైన చికిత్సా విధానాలు మరియు కౌన్సెలింగ్.",
+          icon: "HeartHandshake"
+        },
+        {
+          number: "5",
+          title: "అధునాతన సాంకేతికత",
+          desc: "లేటెస్ట్ లేజర్ హాచింగ్ మరియు మైక్రో-మనిప్యులేషన్ సాంకేతికత.",
+          icon: "Microscope"
         }
       ]
     },
@@ -346,10 +408,12 @@ export const translations: Record<Language, Translation> = {
     },
     hero: {
       badge: "",
-      headlinePart1: "Your Trusted Partner in ",
-      headlineHighlight: "Parenthood",
+      brandTag: "MEDCY IVF",
+      headlinePart1: "8,000+ Families Grew With Us.",
+      headlineHighlight: "Yours Can Too.",
       headlinePart2: "",
-      subtext: "A Free Medical Camp for Every Couple Hoping to Become Parents. You're not alone in this journey. With 8000+ successful IVF cases across our centres, hope is closer than you think.",
+      tagline: "Expert fertility care. Your journey to parenthood starts here.",
+      subtext: "Choose Medcy for proven success rates, top-tier fertility specialists, and highly affordable, all-inclusive treatment plans. No hidden fees, no registration charges—just genuine, expert care to help you become parents.",
       locationBadge: "Arilova Health City, Visakhapatnam",
       offerBadge: "SPECIAL DISCOUNT PACKAGE OFFER",
       offerText: "IVF TREATMENT AT ₹1.8 LAKHS ONLY",
@@ -358,10 +422,9 @@ export const translations: Record<Language, Translation> = {
       offerNote: "Note: Standard market clinics charge ₹1.9 Lakhs — Medcy IVF provides complete treatment package at ₹1.8 Lakhs.",
       srikakulamOffer: "In Srikakulam Branch, Complete IVF Treatment at ₹1.5 Lakhs Only",
       keyPoints: [
-        "8000+ Successful IVF Cases",
-        "IVF Treatment at ₹1.8 Lakhs Only",
-        "Free Expert Consultation & Counselling",
-        "In Srikakulam Branch, Complete IVF Treatment at ₹1.5 Lakhs Only"
+        "Free Expert Consultation",
+        "Free Counselling",
+        "No Registration"
       ],
       formTitle: "Consultation Registration",
       formSubtitle: "Reserve your consultation spot today",
@@ -387,34 +450,49 @@ export const translations: Record<Language, Translation> = {
       successRateLabel: "Consultation & Counselling"
     },
     inclusions: {
-      badge: "PACKAGE HIGHLIGHTS",
-      title: "Comprehensive IVF Package Inclusions",
-      subtitle: "Transparent medical care with all-inclusive procedure support and zero hidden fees.",
+      badge: "INCLUSIONS",
+      title: "1.8 Lakh Package Inclusions",
+      subtitle: "",
       items: [
         {
-          title: "IVF Profiling Tests & Scans",
-          desc: "Complete diagnostic hormonal blood work and advanced baseline ultrasound scans.",
+          title: "IVF profiling tests & Scans",
+          desc: "",
           icon: "Activity"
         },
         {
-          title: "Stimulation Injections & Trigger",
-          desc: "Premium quality ovarian stimulation medication and precisely timed trigger shot.",
+          title: "Semen Backup",
+          desc: "",
+          icon: "Database"
+        },
+        {
+          title: "Stimulation Injections",
+          desc: "",
           icon: "Syringe"
         },
         {
-          title: "IVF / ICSI Procedure & OT",
-          desc: "State-of-the-art Kiel Germany benchmarked embryology lab & operation theater fees.",
+          title: "IVF/ICSI Procedure charges",
+          desc: "",
           icon: "ShieldCheck"
         },
         {
-          title: "Embryo Transfer & 6 Months Freezing",
-          desc: "Safe embryo transfer procedure plus 6 months complimentary cryopreservation.",
-          icon: "Snowflake"
+          title: "Trigger Shot",
+          desc: "",
+          icon: "Target"
         },
         {
-          title: "Semen Backup Facility",
-          desc: "Advanced semen analysis, preparation, and scientific backup storage.",
-          icon: "Database"
+          title: "OT charges",
+          desc: "",
+          icon: "Building2"
+        },
+        {
+          title: "Embryo Transfer",
+          desc: "",
+          icon: "HeartHandshake"
+        },
+        {
+          title: "Embryo Freezing (6 months)",
+          desc: "",
+          icon: "Snowflake"
         }
       ],
       pricingTitle: "Transparent Treatment Pricing",
@@ -461,13 +539,48 @@ export const translations: Record<Language, Translation> = {
         },
         {
           id: "dr-sudeshna",
-          name: "Dr. Sudeshna Devi",
+          name: "Dr. Sudheshna Devi",
           title: "Fertility & Surgery Expert",
           qualifications: "MBBS, DNB (Ob & Gyn), FRM, FMAS, Dip.Cos.Gynecology",
           expBadge: "12+ YEARS EXP",
           photo: "/dr-sudeshna-devi.png",
           bio: "Expert in laparoscopic surgery, hysteroscopy, reproductive medicine, and personalized ovulation induction protocols.",
           achievementBadge: "Laparoscopic Specialist"
+        }
+      ]
+    },
+    whyChoose: {
+      title: "Why Choose Medcy",
+      items: [
+        {
+          number: "1",
+          title: "8,000+ Success Stories",
+          desc: "Leading fertility institute with proven success rates across centres.",
+          icon: "Trophy"
+        },
+        {
+          number: "2",
+          title: "German Kiel Protocols",
+          desc: "State-of-the-art embryology lab bench-marked to global benchmarks.",
+          icon: "Gem"
+        },
+        {
+          number: "3",
+          title: "Senior Specialists",
+          desc: "Decades of dedicated clinical expertise in complex infertility.",
+          icon: "Stethoscope"
+        },
+        {
+          number: "4",
+          title: "Personalized Care",
+          desc: "Customized protocols tailored to your unique diagnostic profile.",
+          icon: "HeartHandshake"
+        },
+        {
+          number: "5",
+          title: "Cutting-Edge Tech",
+          desc: "Advanced laser hatching and high-precision micromanipulation.",
+          icon: "Microscope"
         }
       ]
     },

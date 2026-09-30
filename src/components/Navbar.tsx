@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Calendar, Globe, Sparkles, ChevronRight, MapPin } from 'lucide-react';
+import { Phone, Calendar, Globe, ChevronRight, MapPin } from 'lucide-react';
 import { Language, Translation } from '../data/translations';
 
 interface NavbarProps {
@@ -15,14 +15,24 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onBookClick, o
     <header className="sticky top-0 z-50 w-full backdrop-blur-xl bg-white/95 border-b border-[#652D6C]/15 shadow-sm transition-all duration-300">
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-        {/* Brand Logo */}
-        <a href="#" className="flex items-center group focus:outline-none">
-          <img 
-            src="/medcy-logo.png" 
-            alt="Medcy IVF Logo" 
-            className="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105"
-          />
-        </a>
+        {/* Brand Logos */}
+        <div className="flex items-center gap-2.5 sm:gap-4 shrink-0">
+          <a href="#" className="flex items-center group focus:outline-none">
+            <img 
+              src="/medcy-logo.png" 
+              alt="Medcy IVF Logo" 
+              className="h-9 sm:h-12 lg:h-13 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+          </a>
+          <span className="h-6 sm:h-8 w-px bg-[#652D6C]/25" aria-hidden="true"></span>
+          <a href="#" className="flex items-center group focus:outline-none">
+            <img 
+              src="/vizag-ivf-logo.png" 
+              alt="Vizag IVF Centre Gajuwaka Logo" 
+              className="h-9 sm:h-12 lg:h-13 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+          </a>
+        </div>
 
         {/* Action Controls */}
         <div className="flex items-center gap-2 sm:gap-4">

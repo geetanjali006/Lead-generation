@@ -1,92 +1,104 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { 
+  Activity, 
+  Database, 
+  Syringe, 
+  ShieldCheck, 
+  Target, 
+  Building2, 
+  HeartHandshake, 
+  Snowflake, 
+  CheckCircle2
+} from 'lucide-react';
 import { Translation } from '../data/translations';
 
 interface PackageInclusionsProps {
   t: Translation;
-  onBookClick: () => void;
+  onBookClick?: () => void;
 }
 
-export const PackageInclusions: React.FC<PackageInclusionsProps> = ({ t, onBookClick }) => {
+export const PackageInclusions: React.FC<PackageInclusionsProps> = ({ t }) => {
+  // Mapping of icons based on icon string or item index
+  const getIcon = (iconName: string, index: number) => {
+    const props = { className: "w-5 h-5 sm:w-6 sm:h-6 text-[#652D6C]" };
+    switch (iconName) {
+      case 'Activity':
+        return <Activity {...props} />;
+      case 'Database':
+        return <Database {...props} />;
+      case 'Syringe':
+        return <Syringe {...props} />;
+      case 'ShieldCheck':
+        return <ShieldCheck {...props} />;
+      case 'Target':
+        return <Target {...props} />;
+      case 'Building2':
+        return <Building2 {...props} />;
+      case 'HeartHandshake':
+        return <HeartHandshake {...props} />;
+      case 'Snowflake':
+        return <Snowflake {...props} />;
+      default:
+        const fallbacks = [
+          <Activity {...props} />,
+          <Database {...props} />,
+          <Syringe {...props} />,
+          <ShieldCheck {...props} />,
+          <Target {...props} />,
+          <Building2 {...props} />,
+          <HeartHandshake {...props} />,
+          <Snowflake {...props} />
+        ];
+        return fallbacks[index % fallbacks.length];
+    }
+  };
+
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#FAF6FA] via-[#FAF3FB] to-[#FAF6FA] relative overflow-hidden">
+    <section id="inclusions" className="py-14 sm:py-20 bg-gradient-to-b from-[#FAF6FA] via-[#FAF3FB] to-[#FAF6FA] relative overflow-hidden">
+      {/* Background Subtle Ambient Glows */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#652D6C]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-20 w-80 h-80 bg-[#9A389F]/5 rounded-full blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Transparent Pricing Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#652D6C]/10 border border-[#652D6C]/20 text-[#652D6C] text-xs font-extrabold tracking-wider uppercase">
-            <span>{t.nav.freeCampBadge}</span>
-          </div>
-
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#2A102D] tracking-tight">
-            {t.inclusions.pricingTitle}
+            {t.inclusions.title}
           </h2>
 
-          <p className="text-base sm:text-lg text-[#56335B] font-medium leading-relaxed">
-            {t.inclusions.pricingSubtitle}
-          </p>
+          {t.inclusions.subtitle && (
+            <p className="text-xl sm:text-2xl text-[#652D6C] font-extrabold tracking-tight mt-2.5">
+              {t.inclusions.subtitle}
+            </p>
+          )}
         </div>
 
-        {/* 3 Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-10">
-          {t.inclusions.packages.map((pkg, idx) => (
+        {/* 8 Inclusions Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {t.inclusions.items.map((item, idx) => (
             <div
               key={idx}
-              className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between relative transition-all duration-300 ${
-                pkg.featured
-                  ? 'bg-gradient-to-b from-[#652D6C] to-[#4D1F53] text-white shadow-2xl scale-105 border-2 border-[#9A389F]'
-                  : 'glass-card text-[#2A102D]'
-              }`}
+              className="bg-white rounded-2xl p-5 border border-[#652D6C]/15 shadow-sm hover:shadow-lg hover:border-[#9A389F]/40 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-4 group"
             >
-              {pkg.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-yellow-400 text-[#4D1F53] font-black text-[11px] uppercase tracking-wider px-4 py-1 rounded-full shadow-md">
-                  Most Popular
-                </div>
-              )}
-
-              <div>
-                <h3 className={`text-xl font-extrabold mb-1 ${pkg.featured ? 'text-white' : 'text-[#2A102D]'}`}>
-                  {pkg.name}
-                </h3>
-                <p className={`text-xs mb-4 ${pkg.featured ? 'text-purple-200' : 'text-[#56335B]'}`}>
-                  {pkg.subnote}
-                </p>
-
-                <div className="mb-6 pb-4 border-b border-current/15">
-                  <span className={`text-3xl sm:text-4xl font-black ${pkg.featured ? 'text-white' : 'text-[#652D6C]'}`}>
-                    {pkg.price}
-                  </span>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {pkg.highlights.map((h, i) => (
-                    <li key={i} className="flex items-center gap-2 text-xs sm:text-sm font-medium">
-                      <CheckCircle2 className={`w-4 h-4 shrink-0 ${pkg.featured ? 'text-yellow-300' : 'text-[#9A389F]'}`} />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Icon Container */}
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#FAF3FB] to-[#F5EAF7] border border-[#652D6C]/15 flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 group-hover:bg-[#652D6C] group-hover:text-white transition-all">
+                {getIcon(item.icon, idx)}
               </div>
 
-              <button
-                onClick={onBookClick}
-                className={`w-full py-3 px-4 rounded-xl font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all ${
-                  pkg.featured
-                    ? 'bg-white text-[#652D6C] hover:bg-yellow-300 hover:text-[#4D1F53] shadow-lg'
-                    : 'btn-primary-purple'
-                }`}
-              >
-                <span>{t.nav.bookAppointment}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              {/* Title & Checkmark */}
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span className="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wide">Included</span>
+                </div>
+                <h3 className="text-sm sm:text-base font-extrabold text-[#2A102D] group-hover:text-[#652D6C] transition-colors leading-snug break-words">
+                  {item.title}
+                </h3>
+              </div>
             </div>
           ))}
         </div>
-
-        {/* Pricing Disclaimer */}
-        <p className="text-center text-xs text-[#56335B] font-medium max-w-2xl mx-auto">
-          {t.inclusions.disclaimer}
-        </p>
 
       </div>
     </section>
